@@ -1,7 +1,7 @@
 # Informatik 3, Uebungsserie 2
 
 ## 1. Gegeben sei ein Prozessor mit einer Taktzykluszeit von 1.25 GHz und einem CPI-Wert von 1.45 (der Prozessor verfügt über keine Pipeline). Ein Programm benötigt zur Ausführung 150‘000 Befehle.
-### a) Wie lang ist die ungefähre Ausführungszeit des Programms? Lösung: (3 Punkte)
+#### a) Wie lang ist die ungefähre Ausführungszeit des Programms? Lösung: (3 Punkte)
 1.25 GHz = 1250000000/s => 1/1,25/10^9s=8*10^-10s=0,000 000 000 8s=8ns  
 t=8ns*150000*1,45= **174ms**  
 ### b) Wieso ist der berechnete Wert nur ein Näherungswert? Lösung: (2 Punkte)
