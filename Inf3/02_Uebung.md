@@ -1,12 +1,15 @@
 # Informatik 3, Uebungsserie 2
 
 ## 1. Gegeben sei ein Prozessor mit einer Taktzykluszeit von 1.25 GHz und einem CPI-Wert von 1.45 (der Prozessor verfügt über keine Pipeline). Ein Programm benötigt zur Ausführung 150‘000 Befehle.
-#### a) Wie lang ist die ungefähre Ausführungszeit des Programms? Lösung: (3 Punkte)
+### a) Wie lang ist die ungefähre Ausführungszeit des Programms? Lösung: (3 Punkte)
 1.25 GHz = 1250000000/s => 1/1,25/10^9s=8*10^-10s=0,000 000 000 8s=8ns  
 t=8ns*150000*1,45= **174ms**  
 ### b) Wieso ist der berechnete Wert nur ein Näherungswert? Lösung: (2 Punkte)
+Weil es sich beim CPI-Wert auch nur um einen Durchschnittswert handelt. Zudem ist es gar nicht möglich, dass jeder der Befehle tatsächlich genau 1.45 Zyklen zur Berechnung benötigt, da für jeden Befehl nur ganze Zyklen verwendet werden können. Die Wahrscheinlichkeit, dass sich die erwartete Ausführungszeit mit der tatsächlichen deckt, konvergiert daher gegen Null (0)!
 ### c) Der Prozessor wird durch einen leistungsfähigeren Prozessor mit 0.4 ns Taktzykluszeit und einem CPI-Wert von 1.8 ersetzt. Wie lang ist nun die Ausführungszeit des Programms?
+t=0,4ns*150000*1,8= **48ms**
 ### d) Der Prozessor (von c) wird um 10% übertaktet („overclocking“). Die erzielte Leistungssteigerung beträgt in der Realität aber nur knapp 5%. Wieso?
+
 
 ## 2. Gegeben sei ein einfacher Prozessor ohne Pipelining mit einer Wortbreite von 2 Byte (für Daten und Befehle).
 ### a) Welchen Wert beinhaltet der Befehlszähler jeweils nach Ausführung der jeweiligen Befehle der folgenden Befehlssequenz (der Initialwert sei 24 048 für den ersten Befehl): Ladebefehl, Ladebefehl, Addition, unbedingter Sprung um -12, Speicherbefehl, unbedingter Sprung um +8, Addition ... ?
