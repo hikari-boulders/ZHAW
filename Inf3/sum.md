@@ -49,3 +49,18 @@ Jump		// jump to line xy`
 - e.g. CASE SWITCH: mehrere IF-Anweisungen nacheinande
 - e.g. FOR LOOP: TBD!!!!!!!!!!!!!!!!!
 - e.g. Prozedur
+
+# 04 TBD
+- Hit Time ~ Zugriffszeit bei Treffer
+- Miss Penalty ~ Fehlzugriffaufwand
+
+# 05
+
+## Caches
+- Optimierung des Speichers bringt am meisten Performance
+- Mehr Taktrate ~ mehr Hitze, mehr Stromverbrauch, heute daher in der Entwicklung nicht mehr so interessant
+- Cache kann die Rechenleistung erheblich steigern -> Verbesserung der Leistungsfähigkeit des Caches bringt erheblich mehr als Steigerung der Rechengeschwindigkeit (e.g. Taktrate)
+- 
+ 
+
+
