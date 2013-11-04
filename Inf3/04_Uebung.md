@@ -1,3 +1,5 @@
+***Seraya Takahashi, Paolo De Giglio***
+
 # Informatik 3, Uebungsserie 4
 
 ## Side Notes
@@ -41,7 +43,8 @@ http://taututorial.yolasite.com/sdram.php
 
 **Lösung:**
 
-Im Gegensatz zu DRAM-Bausteinen sind SDRAM-Bausteine mit dem Systembus gesynct. Hierbei wartet das SDRAM-Interface auf den Clock des Buses, um dann die Befehle zu verarbeiten. Die Befehle werden via Pipeline übermittelt. Daher kann der Chip einen komplexeren Befehlssatz verarbeiten, was ihn schneller als DRAM macht. x steht zudem für die Version des DDR-SDRAMs, wobei grundsätzlich gilt: Je grösser x, desto höher die Performance.
+Im Gegensatz zu DRAM-Bausteinen sind SDRAM-Bausteine mit dem Systembus gesynct. Hierbei wartet das SDRAM-Interface auf den Clock des Buses, um dann die Befehle zu verarbeiten. Die Befehle werden via Pipeline übermittelt. Daher kann der Chip einen komplexeren Befehlssatz verarbeiten, was ihn schneller als DRAM macht. Unterschiede zwischen den verschiedenen DDR(x) Varianten sind hauptsächlich, wie oft ein „Prefetch“ asugeführt wird. D.h., wie oft Daten geladen werden, bevor sie tatsächlich benötigt werden. Dies kommt auch beim beim Pipelining zum Einsatz. DDR => 2x Prefetch, DDR2 => 4x Prefetch, DDR3 => 8x Prefetch
+
 
 ## 2. Durch eine Speicherhierarchie soll der Benutzer sehr grossen Speicher zu sehr günstigen Kosten (virtuell) nutzen können.
 ### a) Geben Sie die folgende aktuellen Grössenordnungen für ein SRAM, DRAM, Harddisk, Bandlaufwerk und DVD an:
@@ -70,6 +73,11 @@ Im Gegensatz zu DRAM-Bausteinen sind SDRAM-Bausteine mit dem Systembus gesynct. 
 
 **Lösung:**
 
-- In den meisten der heutigen Computer werden DRAMs verbaut, welche CAS before RAS Refresh (CBR Refresh) nutzen, um die Transistoren zu refreshen.
+- Bei DRAM-Transistoren kann die Ladung nur für eine bestimmte Zeit zwischengespeichert werden, weil sie die Ladung mit der Zeit wieder verlieren. Um dieses Problem in den Griff zu bekommen, müssen daher in regelmässigen Abständen (i.d.R. alle 32 oder 63 ms) die Stände überprüft und neu gesetzt bzw. die Transistoren voll aufgeladen werden, um eine klare Unterscheidung zwischen true und false machen zu können. In den meisten der heutigen Computer werden DRAMs verbaut, welche "CAS before RAS Refresh" (CBR Refresh) nutzen, um die Transistoren zu refreshen. Hierbei wird die Zeilenadresse nicht extern verwaltet, da dies durch die Implementierung eines Zeilenzählers im Speicherbaustein entfällt. Ein Refreshzyklus beginnt mit einer fallenden Flanke an CAS und wird danach an RAS durch steigende Flanken an beiden Steuerleitungen beendet. Da gegenüber dem Normalbetrieb die Steuersignale in vertauschter Reihenfolge übermittelt werden, erkennt der DRAM, dass es sich um einen Refreshzyklus handeln muss. Gegenüber dem Standartverfahren ist das CBR-Refresh-Verfahren schneller, weil die Übergabe der Zeilenadresse entfällt. Der Prozess wird lediglich von aussen angestossen. Die Grafik veranschaulicht den Vorgang eines CBR Refreshes anhand eines EDO-RAMs, welcher zur Gruppe der DRAMs gehört.
+
+***Legende:***
+
+- CAS := Column Access Strobe (hierbei wird eine Spalte aus der Speicherzelle ausgelesen)
+- RAS := Row Access Strobe (hierbei wird eine Zeile aus der Speicherzelle ausgelesen)
 
 ![](CBRRefresh.png "")
